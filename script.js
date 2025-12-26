@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const form = document.getElementById("form");
 
 form.addEventListener("submit", function (e) {
@@ -7,13 +6,12 @@ form.addEventListener("submit", function (e) {
   const age = Number(document.getElementById("age").value);
   const name = document.getElementById("name").value;
 
-  // Validation
-  if (!name || age === 0 || isNaN(age)) {
-  alert("Please enter valid details.");
-  return;
-}
+  // Validation: ONLY empty fields
+  if (!name || isNaN(age)) {
+    alert("Please enter valid details.");
+    return;
+  }
 
-  // Promise logic
   const agePromise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (age > 18) {
@@ -21,14 +19,8 @@ form.addEventListener("submit", function (e) {
       } else {
         reject(`Oh sorry ${name}. You aren't old enough.`);
       }
-    }, 4000);
+    }, 4000); // ✅ MUST be 4000ms
   });
 
-  agePromise
-    .then((message) => {
-      alert(message);
-    })
-    .catch((error) => {
-      alert(error);
-    });
+  agePromise.then(alert).catch(alert);
 });
