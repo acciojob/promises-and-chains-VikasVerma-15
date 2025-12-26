@@ -4,14 +4,14 @@ const form = document.getElementById("form");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const age = document.getElementById("age").value;
+  const age = Number(document.getElementById("age").value);
   const name = document.getElementById("name").value;
 
   // Validation
-  if (age === "" || name === "") {
-    alert("Please enter valid details.");
-    return;
-  }
+  if (!name || age === 0 || isNaN(age)) {
+  alert("Please enter valid details.");
+  return;
+}
 
   // Promise logic
   const agePromise = new Promise((resolve, reject) => {
