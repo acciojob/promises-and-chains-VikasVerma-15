@@ -1,9 +1,12 @@
+const form = document.getElementById("form");
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const ageValue = document.getElementById("age").value;
-  const name = document.getElementById("name").value;
-  if (!ageValue || !name) {
+  const name = document.getElementById("name").value.trim();
+
+  if (!ageValue || Number(ageValue) <= 0 || !name) {
     alert("Please enter valid details.");
     return;
   }
