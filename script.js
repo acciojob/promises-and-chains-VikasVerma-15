@@ -14,14 +14,14 @@ form.addEventListener("submit", function (e) {
   const age = Number(ageValue);
 
   const agePromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (age > 18) {
-        resolve(`Welcome, ${name}. You can vote.`);
-      } else {
-        reject(`Oh sorry ${name}. You aren't old enough.`);
-      }
-    }, 4000);
-  });
+  setTimeout(() => {
+    if (age >= 18) {
+      resolve(`Welcome, ${name}. You can vote.`);
+    } else {
+      reject(`Oh sorry ${name}. You aren't old enough.`);
+    }
+  }, 4000);
+});
 
   agePromise.then(alert).catch(alert);
 });
