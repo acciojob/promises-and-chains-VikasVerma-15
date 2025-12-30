@@ -4,7 +4,7 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const age = document.getElementById("age").value;
-  const name = document.getElementById("name").value;
+  const name = document.getElementById("name").value.trim(); // ✅ IMPORTANT
 
   if (!age || !name) {
     alert("Please enter valid details.");
