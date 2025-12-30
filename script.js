@@ -1,10 +1,10 @@
-const form = document.getElementById("form");
+const btn = document.getElementById("btn");
 
-form.addEventListener("submit", function (e) {
+btn.addEventListener("click", function (e) {
   e.preventDefault();
 
   const age = document.getElementById("age").value;
-  const name = document.getElementById("name").value.trim(); // ✅ IMPORTANT
+  const name = document.getElementById("name").value.trim();
 
   if (!age || !name) {
     alert("Please enter valid details.");
