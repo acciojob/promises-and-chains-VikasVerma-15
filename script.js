@@ -6,8 +6,9 @@ btn.addEventListener("click", function (e) {
   const age = document.getElementById("age").value;
   const name = document.getElementById("name").value.trim();
 
+  // ❗ FIXED MESSAGE (removed dot)
   if (!age || !name) {
-    alert("Please enter valid details.");
+    alert("Please enter valid details");
     return;
   }
 
@@ -23,3 +24,4 @@ btn.addEventListener("click", function (e) {
 
   agePromise.then(alert).catch(alert);
 });
+
